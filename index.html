@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
         .jumbotron {
@@ -30,9 +31,20 @@
     function requestInvite() {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "https://wwchsv-invite.herokuapp.com/invitations", true);
+
+        xhr.addEventListener("load", success);
+        xhr.addEventListener("error", fail);
         xhr.setRequestHeader("Content-Type", "application/json");
         var emailJson = { email: document.getElementById("emailTextBox").value };
         xhr.send(JSON.stringify(emailJson));
+    }
+
+    function success(evt) {
+        alert("Succesfully submitted invitation request");
+    }
+
+    function fail(evt) {
+        alert("Failed to submit invitation request. Contact WomenWhoCode HSV administrator to resolve issue.");
     }
 </script>
 
