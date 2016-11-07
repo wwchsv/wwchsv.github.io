@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>WWC Huntsville</title>
     <meta charset="utf-8">
@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="notify.min.js"></script>
     <style>
         .jumbotron {
             background-color: #ff7F50;
@@ -40,11 +41,14 @@
     }
 
     function success(evt) {
-        alert("Succesfully submitted invitation request");
+        $("#emailTextBox")
+                .notify("Succesfully submitted invitation request.", { className: "success", position: "bottom center" });
     }
 
     function fail(evt) {
-        alert("Failed to submit invitation request. Contact WomenWhoCode HSV administrator to resolve issue.");
+        $("#emailTextBox")
+                .notify("Failed to submit invitation request. Contact WomenWhoCode HSV administrator to resolve issue.",
+                        { className: "error", position: "bottom center" });
     }
 </script>
 
