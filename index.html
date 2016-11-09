@@ -5,14 +5,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Hind|Montserrat|Open+Sans" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="notify.min.js"></script>
     <style>
         .jumbotron {
-            background-color: #ff7F50;
-            color: #ffffff;
+            background-color: white;
         }
+        h1 {
+            background-color: white;
+            color: #48484A;
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: bold;
+        }
+
+        p {
+            background-color:white;
+            color: #48484A;
+            font-family: 'Hind', sans-serif;
+            font-weight: bold;
+        }
+
+        button {
+            font-family: 'Hind', sans-serif;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
@@ -20,11 +39,11 @@
 
 </div>
 <div class="jumbotron text-center">
-    <h1>Women Who Code Huntsville</h1>
-    <p>Join our community in Slack</p>
+    <h1><center><img src="wwchsv-logo.png" alt="WWC Huntsville" class="img-responsive"></center></h1>
+    <p><b>Join our community</b></p>
     <form class="form-inline">
         <input type="email" id="emailTextBox" class="form-control" size="50" placeholder="Email Address" required>
-        <button type="button" class="btn btn-danger" onclick="requestInvite()">Subscribe to Slack</button>
+        <button type="button" class="btn btn-danger" onclick="requestInvite()"><b>Subscribe to Slack</b></button>
     </form>
 </div>
 
