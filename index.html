@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>WWC Huntsville</title>
+    <title>Women Who Code Huntsville</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -21,6 +21,7 @@
         }
 
         p {
+            padding: 5px;
             background-color:white;
             color: #48484A;
             font-family: 'Hind', sans-serif;
@@ -39,12 +40,17 @@
 
 </div>
 <div class="jumbotron text-center">
-    <h1><center><img src="wwchsv-logo.png" alt="WWC Huntsville" class="img-responsive"></center></h1>
+    <h1><center><img src="wwchsv-logo.png" alt="Women Who Code Huntsville" class="img-responsive"></center></h1>
     <p><b>Join our community</b></p>
     <form class="form-inline">
         <input type="email" id="emailTextBox" class="form-control" size="50" placeholder="Email Address" required>
         <button type="button" class="btn btn-danger" onclick="requestInvite()"><b>Subscribe to Slack</b></button>
     </form>
+    <p>
+    <a target="_blank" title="Follow us on Twitter" href="http://www.twitter.com/womenwhocodehsv"><img alt="Follow us on Twitter" src="https://c866088.ssl.cf3.rackcdn.com/assets/twitter40x40.png" border=0></a>
+    <a target="_blank" title="Join us on Facebook" href="https://www.facebook.com/groups/wwchsv/"><img alt="Join us on Facebook" src="https://c866088.ssl.cf3.rackcdn.com/assets/facebook40x40.png" border=0></a>
+    <a title="Email us" href="mailto:erin@womenwhocode.com"><img alt="Email us" src="email.png" border=0></a>
+    </p>
 </div>
 
 <script>
@@ -66,7 +72,7 @@
 
     function fail(evt) {
         $("#emailTextBox")
-                .notify("Failed to submit invitation request. Contact WomenWhoCode HSV administrator to resolve issue.",
+                .notify("Failed to submit invitation request. Contact Women Who Code HSV administrator to resolve issue. Please email erin@womenwhocode.com.",
                         { className: "error", position: "bottom center" });
     }
 </script>
