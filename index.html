@@ -57,7 +57,7 @@
 <script>
     function requestInvite() {
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://wwchsv-invite.herokuapp.com/invitations", true);
+        xhr.open("POST", "https://wwchsv-slack-invite.herokuapp.com/invite", true);
 
         xhr.addEventListener("load", success);
         xhr.addEventListener("error", fail);
