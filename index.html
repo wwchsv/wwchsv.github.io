@@ -42,9 +42,9 @@
 <div class="jumbotron text-center">
     <h1><center><img src="wwchsv-logo.png" alt="Women Who Code Huntsville" class="img-responsive"></center></h1>
     <p><b>Join our community</b></p>
-    <form class="form-inline">
-        <input type="email" id="emailTextBox" class="form-control" size="50" placeholder="Email Address" required>
-        <button type="button" class="btn btn-danger" onclick="requestInvite()"><b>Subscribe to Slack</b></button>
+    <form method="POST" action="http://wwchsv-slack-invite.herokuapp.com/invite/" class="form-inline" id="join-form">
+        <input type="email" name="email" id="emailTextBox" class="form-control" size="50" placeholder="Email Address" required>
+        <button type="submit" class="btn btn-danger submit"><b>Join</b></button>
     </form>
     <p>
     <a target="_blank" title="Follow us on Twitter" href="http://www.twitter.com/WWCodeHSV"><img alt="Follow us on Twitter" src="https://c866088.ssl.cf3.rackcdn.com/assets/twitter40x40.png" border=0></a>
@@ -55,17 +55,15 @@
 </div>
 
 <script>
-    function requestInvite() {
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://wwchsv-slack-invite.herokuapp.com/invite", true);
-
-        xhr.addEventListener("load", success);
-        xhr.addEventListener("error", fail);
-        xhr.setRequestHeader("Content-Type", "application/json");
-        var emailJson = { email: document.getElementById("emailTextBox").value };
-        xhr.send(JSON.stringify(emailJson));
-    }
-
+    var form = document.getElementById('join-form');
+    var email = document.getElementById('emailTextBox')
+    var token = document.getElementById('slack-token');
+    form.addEventListener('submit', function(evt) {
+      if (!email.value) {
+        evt.preventDefault();
+      }
+    });
+    
     function success(evt) {
         $("#emailTextBox")
                 .notify("Succesfully submitted invitation request.", { className: "success", position: "bottom center" });
